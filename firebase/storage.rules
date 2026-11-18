@@ -1,0 +1,10 @@
+// Firebase Storage: no direct client access. Uploads/reads go through the ARYAN backend (Admin SDK bypasses these rules)
+// and are served publicly via  https://YOUR-DOMAIN/media/<file>.
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

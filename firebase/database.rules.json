@@ -1,0 +1,12 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "users":         { ".indexOn": ["username", "email", "referredBy", "telegramChatId"] },
+    "orders":        { ".indexOn": ["uid", "status"] },
+    "auto_payments": { ".indexOn": ["uid", "status", "gatewayId"] },
+    "tickets":       { ".indexOn": ["uid"] },
+    "api_clients":   { ".indexOn": ["uid"] }
+  }
+}
